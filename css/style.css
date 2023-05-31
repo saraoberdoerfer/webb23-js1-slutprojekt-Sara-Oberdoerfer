@@ -1,0 +1,65 @@
+body {
+    background: rgb(99, 236, 220);
+    background: radial-gradient(circle, rgba(23,221,197,1) 4%, rgba(146, 232, 212, 0.666) 68%);
+    font-size: x-large;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+#putCityName{
+    text-align: center;
+    margin-right: 70px;
+}
+
+#city{
+    margin: 4px;
+    height:25px;
+    font-size:14pt;
+}
+
+#cityButton{
+    height:32px;
+    margin: 4px;
+    border-radius: 10px;
+    background: rgba(61, 108, 237, 0.499);
+    width: 70px;
+    font-size:12pt;
+}
+
+li{
+    list-style-type: none;
+}
+
+#infoWeather{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#infoWeatherHours{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    margin: auto;
+}
+
+#error{
+    text-align: center;
+}
+
+#selectHours{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height:25px;
+    font-size:14pt;
+    margin-top: 50px;
+}

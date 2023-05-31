@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./java/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Väder</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="city" placeholder="City" required>
+        <button id="cityButton">Submit</button>
+    </form>
+    <h3 id="error"></h3>
+    <h3 id="putCityName"></h3>
+    <div id="infoWeather"></div>
+    <select name="hours" id="selectHours">
+        <option value="0">Select weather prognosis</option>
+        <option value="1">3hr</option>
+        <option value="2">6hr</option>
+        <option value="3">9hr</option>
+        <option value="4">12hr</option>
+    </select>
+    <div id="infoWeatherHours"></div>
+</body>
+</html>
