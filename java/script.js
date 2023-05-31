@@ -20,7 +20,7 @@ form.addEventListener(`submit`, function (event) {
     const city = inputCity.value;
     form.reset();
 
-    const lonLatUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+    const lonLatUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
     fetch(lonLatUrl)
         .then((response) => {
