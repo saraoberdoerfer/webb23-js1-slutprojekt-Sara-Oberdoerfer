@@ -8,14 +8,16 @@ const errorH3 = document.querySelector(`#error`);
 const body = document.querySelector(`body`);
 const h3City = document.querySelector(`#putCityName`);
 
-
+// add event to submit button 
 form.addEventListener(`submit`, function (event) {
     event.preventDefault();
+    // make website clear after every  new search
     weatherDiv.innerHTML = ``;
     weatherHoursDiv.innerHTML = ``;
     h3City.innerText = ``;
     errorH3.innerText = ``;
 
+    // take the citys name from search bar put into variable
     const inputCity = document.querySelector(`#city`);
     const city = inputCity.value;
     form.reset();
@@ -33,6 +35,7 @@ form.addEventListener(`submit`, function (event) {
         .then(findLonLatToGetCityName);
 });
 
+// take lon and lat into variables to get city info
 function findLonLatToGetCityName(lonLat) {
     if (lonLat[0] == undefined) {
         errorH3.innerText = `Cannot find the city`;
@@ -70,6 +73,7 @@ function findLonLatToGetCityName(lonLat) {
     }
 }
 
+// put info of current weather into a list (if temp higher than 15 make text red otherwise blue)
 function createListOfInfoCurrentWeather(currentWeather) {
     const allInfoWeatherArr = [
         currentWeather.weather[0].description,
@@ -98,14 +102,12 @@ function createListOfInfoCurrentWeather(currentWeather) {
     img.src = imgUrl;
 }
 
+// add event to select 3h, 6h, 9h, 12h (show temp and icon)
 function createDivWithInfoWeatherEveryThreeHours(weatherHoursObj) {
     const selectHours = document.querySelector(`#selectHours`);
 
     selectHours.addEventListener(`change`, (event) => {
         const chosenHour = event.target.value;
-
-        console.log(weatherHoursObj.list[0].main.temp);
-        console.log(weatherHoursObj.list[0].weather[0].icon);
 
         weatherHoursDiv.innerHTML = ``;
 
@@ -114,6 +116,7 @@ function createDivWithInfoWeatherEveryThreeHours(weatherHoursObj) {
         for (let i = 0; i < chosenHour; i++) {
             hours += 3;
 
+            // create a div for every 3 hours with p for time and p for temp and img for icon in the div
             const prognosisDiv = document.createElement(`div`);
             weatherHoursDiv.append(prognosisDiv);
 
@@ -132,8 +135,6 @@ function createDivWithInfoWeatherEveryThreeHours(weatherHoursObj) {
             prognosisDiv.append(imgHours);
             const imgHoursUrl = `https://openweathermap.org/img/wn/${weatherHoursObj.list[i].weather[0].icon}@2x.png`;
             imgHours.src = imgHoursUrl;
-
-            imgHours.style.width = `100px`;
 
             if (weatherHoursObj.list[i].main.temp < 15) {
                 tempHours.style.color = `blue`;
